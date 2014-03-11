@@ -512,14 +512,21 @@ urls.forEach(function (url) {
     };
 
     page.onUrlChanged = function(targetUrl) {
-    console.log('New URL: ' + targetUrl);
-    if (url === targetUrl)
-        console.log("Frontend redirect!");
-};
+    console.log('page.onUrlChanged: ' + targetUrl);
+  };
 
     page.onNavigationRequested = function(newUrl, type, willNavigate, main) {
-         console.log('Nav req: ' + newUrl);
+        if (main && url!=newUrl  && newUrl.replace(/\/$/,"")!=url && (type=="Other" || type=="Undefined") ) {
+
+            console.log('Redirecting from ' + url  + ' to '+ newUrl);
+            // page.redirects.push('From ' + url + ' to ' + newUrl + '.');
+
+            // Continue with the next
+            // url=newUrl;
+            // page.close();
+            // doRender();
         }
+    };
 
     // response
     page.onResourceReceived = function (res) {
