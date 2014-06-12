@@ -275,7 +275,8 @@ urls.forEach(function (url) {
             resources = page.resources;
 
         if (status !== 'success') {
-            console.log('FAIL to load ' + url + ' reason:' + page.reason + ' url:' + page.reason_url);
+            console.error('FAIL to load ' + url + ' reason:' + page.reason + ' url:' + page.reason_url);
+            exitStatus += 1;
         } else {
             // page load time
             loadTime = new Date() - startTime;
