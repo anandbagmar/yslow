@@ -196,11 +196,12 @@ urls.forEach(function (url) {
     };
 
     // used for better error messages
+    /*
     page.onResourceError = function(resourceError) {
       page.reason = resourceError.errorString;
       page.reason_url = resourceError.url;
     };
-
+    */
     // supressing all errors for now
     /*
     page.onConsoleMessage = function (msg){};
@@ -275,7 +276,8 @@ urls.forEach(function (url) {
             resources = page.resources;
 
         if (status !== 'success') {
-            console.error('FAIL to load ' + url + ' reason:' + page.reason + ' url:' + page.reason_url);
+            // console.error('FAIL to load ' + url + ' reason:' + page.reason + ' url:' + page.reason_url);
+            console.error('FAIL to load ' + url);
             exitStatus += 1;
         } else {
             // page load time
