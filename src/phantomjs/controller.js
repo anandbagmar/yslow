@@ -59,11 +59,8 @@ var i, arg, page, urlCount, viewport,
         ba: 'basicauth'
     };
 
-// remove the first argumentent, the script name
-args.shift();
-
 // loop args
-for (i = 0; i < args.length; i += 1) {
+for (i = 1; i < len; i += 1) {
     arg = args[i];
     if (arg[0] !== '-') {
         // url, normalize if needed
