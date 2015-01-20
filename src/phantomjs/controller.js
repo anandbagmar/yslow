@@ -18,7 +18,8 @@
 // parse args
 var i, arg, page, urlCount, viewport,
     webpage = require('webpage'),
-    args = phantom.args,
+    system = require('system'),
+    args = system.args,
     len = args.length,
     urls = [],
     yslowArgs = {
@@ -58,8 +59,11 @@ var i, arg, page, urlCount, viewport,
         ba: 'basicauth'
     };
 
+// remove the first argumentent, the script name
+args.shift();
+
 // loop args
-for (i = 0; i < len; i += 1) {
+for (i = 0; i < args.length; i += 1) {
     arg = args[i];
     if (arg[0] !== '-') {
         // url, normalize if needed
