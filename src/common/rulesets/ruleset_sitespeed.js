@@ -1096,7 +1096,6 @@ YSLOW.registerRule({
   lint: function(doc, cset, config) {
     var i, url, score, len, comp,
       hash = {},
-      offenders = [],
       comps = cset.getComponentsByType(['js', 'css']),
       scripts = doc.getElementsByTagName('script'),
       css = doc.getElementsByTagName('link');
