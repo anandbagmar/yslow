@@ -271,7 +271,7 @@ urls.forEach(function (url) {
     page.startTime = new Date();
     page.open(url, function (status) {
         var yslow, ysphantomjs, controller, evalFunc,
-            loadTime, url, resp, output,
+            loadTime, resp, output,
             exitStatus = 0,
             startTime = page.startTime,
             resources = page.resources;
