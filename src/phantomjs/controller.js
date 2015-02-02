@@ -435,7 +435,7 @@ urls.forEach(function (url) {
                                     // setup the response
                                     // real values will be added to the component
                                     // from the header
-                                    response.bodySize = '-1';
+                                    response.bodySize = -1;
                                     response.contentType = '';
                                     response.headers = [];
                                     response.id = '-1';
